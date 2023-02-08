@@ -10,7 +10,7 @@ app.get('/', (req, res, next)=>{
 })
 
 app.get('/downloadBooks',(req, res, next)=> {
-    res.download('./public/Junior_Frontend_developer(React.js).pf', "another", (err)=>{
+    res.download('./public/Junior_Frontend_developer(React.js).pdf', "another", (err)=>{
         console.log('File send', err)
     })
 })
