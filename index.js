@@ -5,31 +5,26 @@ const PORT = 7000
 const HOST = 'localhost'
 const app = e()
 
-
-/*
-const prod = ['apple', 'pen', 'comp']
 app.get('/', (req, res, next)=>{
     res.status(200).send(new Date())
 })
+
+const prod = ['apple', 'pen', 'comp']
+
 app.get('/products', (req, res)=>{
-    res.json(prod)
+    res.send(prod)
 })
 app.get('/products/:id', (req, res, next)=>{
-    console.log('page products:', req.query.t)
-    if(prod[req.params.id]){
-        res.json(prod[req.params.id])
-    } else {
-        res.status(403).send("product not found")
-    }
+    console.log(prod[req.params.id]) // работает с массивом только
+    res.send(prod[req.params.id])
 })
-*/
-booksRouter.get('/', (req, res)=> {
+
+/*booksRouter.get('/', (req, res)=> {
 res.send('Books')
 })
 booksRouter.get('/about', (req, res)=> {
     res.send('About books')
-})
-
+})*/
 
 app.use('/books', booksRouter)
 
